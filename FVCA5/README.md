@@ -1,112 +1,17 @@
-# Benchmark on finite volume schemes for anisotropic diffusion problems (FVCA5 conference)
 
-Content is originally from R. Herbin and F. Hubert (see original website https://www.i2m.univ-amu.fr/fvca5/benchmark/index.html).  
-Markdown layout done by datafl4sh (github repository file https://github.com/wareHHOuse/fvca-meshes/blob/master/FVCA5/README.md).  
-No conversion to MED format was performed on this benchmark.  
+# Meshes of the benchmark of the FVCA8 Conference
+Content is originally from R. Herbin and F. Hubert (see [PDF file](./OriginalMeshes/Benchmark.pdf) or original [website](https://www.i2m.univ-amu.fr/fvca5/benchmark/index.html)).  
 
-## The different meshes
+The 2D meshes were converted to MED format using the [python script](./MEDFiles/convert_2Dmsh_to_med.py).  
 
-All of these meshes are discretizations of the domain [0,1]^2 
- 
- * `mesh1_i` is a classical triangular mesh. `mesh1_i` has been obtained by duplication of `mesh1_0`.
- * `mesh2_i` is a uniform rectangular mesh. The mesh size of `mesh2_i` is equal to 2^{-i-1}.
- * `mesh3_i` is rectangle mesh locally refined in the neighbourhood of (0,0). `mesh3_i` has been obtained by refinement of `mesh3_0`.
- * `mesh4_i` is a quadrangle mesh with acute angles.
- * `mesh5_i` is a nonconforming rectangular mesh for the vertical fault problem.
- * `mesh6` is  a conforming distorted quadrangle mesh
- * `mesh7` is  a nonconforming distorted quadrangle mesh
- 
-## The format of the meshes
+## Presentation
 
-We provide two different formats for the meshes
+The aim of this benchmark was to provide a number of test cases in order to compare the properties (convergence, robustness...) of existing discretization schemes for anisotropic diffusion problems on general possibly nonconforming  2D meshe.  
+It was proposed in the occasion of the [Fifth International Symposium on Finite Volumes for Complex Applications - FVCA5](https://www.i2m.univ-amu.fr/fvca5/benchmark/index.html) held in Aussois (France) from June 8th to June 13th 2008.
 
- `.typ1` and `.typ2`
+## Definition of the benchmark
 
+All the necessary informations on the proposed test cases and the expected outputs are given in the [PDF file](./OriginalMeshes/Benchmark.pdf)
 
-### Format .typ1 (triangular or quadrangular control volumes) includes
- * the  total number of vertices
- * the coordinates of the vertices   
- * the total number of triangles
- * the number of each of their three vertices ordered clockwise
- * the total number of quadrangles
- * the number of each of their four vertices ordered clockwise
- * the total number of edges on the boundary of the domain
- * the number of the vertices that define such edge
- * the total number of all the edges ( intersection of two control volumes or of a control volume and the boundary of the domain)
- * informations on each edge
-    * the number of the two vertices of the edge 
-    * the number of the two control volumes  defining the edge or for the boundary the "numero" of the control volume and 0
- 
+The 2D meshes are available in the [original format](OriginalMeshes) and in [MED format](MEDFiles).
 
-
-### Format .typ2 (polygonal control volumes) gives
- * the  total number of vertices
- * the coordinates of the vertices
- * the number of control volumes
- * the control volumes with
-   * the total number of vertices on the boundary of volume
-   * the number of each of their vertices ordered clockwise
-
- 
-## Example:
-We consider a mesh named test with 3 control volumes `[0,0.5]*[0.1], [0.5,1]*[0,0.5],[0.5,1]*[0.5,1]`
-
-### File `test.typ1`
-```
-vertices
-8
-0.0 0.0
-0.5 0.0
-1.0 0.0
-0.5 0.5 
-1.0 0.5
-0.0 1.0
-0.5 1.0
-1.0 1.0
-triangles
-0
-quadrangles
-3
-1 2 7 6
-2 3 5 4
-4 5 8 7
-edges of the boundary
-7
-1 2
-1 6 
-2 3
-3 5
-5 8
-6 7
-7 8
-all edges
-1 2 1 0
-1 6 1 0
-2 3 2 0
-2 4 1 2
-3 5 2 0
-4 5 2 3
-4 7 1 3
-5 8 3 0
-6 7 1 0
-7 8 3 0
-```
-     
-### File `test.typ2`
-```
-Vertices
-8
-0.0 0.0
-0.5 0.0
-1.0 0.0
-0.5 0.5 
-1.0 0.5
-0.0 1.0
-0.5 1.0
-1.0 1.0
-cells
-3
-5 1 2 4 7 6
-4 2 3 5 4
-4 4 5 8 7
-```
