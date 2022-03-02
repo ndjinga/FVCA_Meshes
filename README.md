@@ -1,7 +1,7 @@
 # FVCA_Meshes
 Archive of FVCA meshes and scripts to convert them into the [MED file format](https://docs.salome-platform.org/8/dev/MEDCoupling/med-file.html).
 The [MED file format](https://docs.salome-platform.org/8/dev/MEDCoupling/med-file.html) is a binary format based on [HDF5](https://www.hdfgroup.org/solutions/hdf5/) used to store and manipulate large meshes.
-The [MED library](ftp://ftp.cea.fr/pub/salome/prerequisites/med-4.1.1.tar.gz) can be downloaded [here](ftp://ftp.cea.fr/pub/salome/prerequisites/med-4.1.1.tar.gz).  
+The [MED library](ftp://ftp.cea.fr/pub/salome/prerequisites/med-4.1.1.tar.gz) can be downloaded [here](ftp://ftp.cea.fr/pub/salome/prerequisites/) (file med-4.1.1.tar.gz).  
 
 - [**FVCA5**](https://www.i2m.univ-amu.fr/fvca5/) conference held in France in 2008 introduced a benchmark for the anisotropic diffusion equation on various 2D meshes (see [here](https://www.i2m.univ-amu.fr/fvca5/benchmark/bench.pdf) for the benchmark description).  
 The FVCA5 meshes and their description can be found [here](https://github.com/wareHHOuse/fvca-meshes/tree/master/FVCA5) (meshes in bz2 compressed form) or on the original [website](https://www.i2m.univ-amu.fr/fvca5/benchmark/Meshes/index.html) in their original format. I uploaded the meshes in their original format [here](./FVCA5/OriginalMeshes).  
