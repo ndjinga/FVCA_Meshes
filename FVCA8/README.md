@@ -12,7 +12,7 @@ It was proposed in the occasion of the [Eighth Conference on Finite Volumes for 
 
 All the necessary informations on the proposed test cases and the expected outputs are given in the [PDF file](OriginalBenchmark/Benchmark.pdf)
 
-The 2D and 3D meshes are available in their original format [here](OriginalBenchmark), and in MED format [here](MEDFiles). 
+The 2D and 3D meshes are available in their original format [here](OriginalBenchmark), and in [MED file format](https://docs.salome-platform.org/8/dev/MEDCoupling/med-file.html) [here](MEDFiles). 
 
 You can download the whole repository by clicking on the green button **Clone or download** above and then on **Download ZIP** (or you can `git clone` the repository if you are using git).
 
